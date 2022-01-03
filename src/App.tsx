@@ -10,8 +10,11 @@ const App: FC = () => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         if (event.target.name === 'task') setTask(event.target.value)
         else setDeadline(Number(event.target.value))
-        console.log(task, deadline);
     };
+
+    const addTask = (): void => {
+
+    }
 
     return (
         <div className="App">
@@ -20,7 +23,7 @@ const App: FC = () => {
                     <input type="text" placeholder="Task..." name="task" onChange={handleChange}/>
                     <input type="number" placeholder="Deadline" name="deadline" onChange={handleChange}/>
                 </div>
-                <button>Add Task</button>
+                <button onClick={addTask}>Add Task</button>
             </div>
             <div className="todoList">
             </div>
